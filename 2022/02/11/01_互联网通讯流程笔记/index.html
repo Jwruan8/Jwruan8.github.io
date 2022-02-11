@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="1、C&#x2F;S通信模型    C：client software ;客户端软件        1）客户端软件专门安装在客户端计算机上        2）帮助客户端计算机向指定服务端计算机发送请求，索要资源文件        3）帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为            [文字，数字，图片，视频，命令]    S：serversoftware;服务器软件">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+<meta property="og:url" content="http://example.com/2022/02/11/01_%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%AE%AF%E6%B5%81%E7%A8%8B%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、C&#x2F;S通信模型    C：client software ;客户端软件        1）客户端软件专门安装在客户端计算机上        2）帮助客户端计算机向指定服务端计算机发送请求，索要资源文件        3）帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为            [文字，数字，图片，视频，命令]    S：serversoftware;服务器软件">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-11T11:59:43.036Z">
+<meta property="article:modified_time" content="2022-02-11T12:00:25.539Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,133 +154,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-01_互联网通讯流程笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、C&#x2F;S通信模型<br>    C：client software ;客户端软件<br>        1）客户端软件专门安装在客户端计算机上<br>        2）帮助客户端计算机向指定服务端计算机发送请求，索要资源文件<br>        3）帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为<br>            [文字，数字，图片，视频，命令]<br>    S：serversoftware;服务器软件<br>        1)服务器软件专门安装在服务端计算机_上<br>        2)服务器软件用于接收来自于特定的客户端软件发送请求<br>        3)服务器软件在接收到请求之后自动的在服务端计算机上定位被访问的资源文件<br>        4)服务器软件自动的将定位的文件内容解析为【二进制数据】通过网络发送回发起请求的客户端软件上<br>    使用场景：C&#x2F;S普遍用于个人娱乐市场，比如微信，淘宝，京东，视频（优酷，B站）<br>    大企业办公领域使用较少！<br>    优点：1、安全性高；2、有效降低服务端计算机的工作压力<br>    缺点：1、增加客户获得服务的成本2、更新较为繁琐</p>
+<p>2、B&#x2F;S通信模型<br>    B：browser，浏览器<br>        1）浏览器安装在客户端计算机软件<br>        2）可以向任意服务器发送请求，索要资源文件<br>        3）可以将服务器返回的【二进制数据】解析为【文字、数字、图片、视频、命令】</p>
+<pre><code>S：server software 服务器软件
+    1）服务器软件专门安装在服务端计算机上
+    2）可以接收任意浏览器发送的请求
+    3）自动的在服务器计算机上定位被访问的资源文件
+    4）自动地将定位的资源文件内容以二进制形式发送回发起请求浏览器上！
+
+适用场景：既适用于个人娱乐市场，又广泛使用与企业日常活动
+优点：
+    1、不会增加用户获得服务的成本
+    2、几乎不需要更新过浏览器
+缺点：
+    1、几乎无法有效的对服务端计算机资源文件进行保护
+    2、服务端计算机工作压力异常巨大 【B/S通信下高并发的解决方案！】
+</code></pre>
+<p>3、共享资源文件<br>    1、什么是共享资源文件：<br>        可以通过网络进行传输的文件，都能被称为共享资源文件！<br>        所有文件内容都可以通过网络传输，所有文件都是共享资源文件<br>    2、Http服务器下对共享资源文件的分类<br>        1）静态资源文件<br>        2）动态资源文件<br>    3、静态资源文件：<br>        1）如果文件里面的内容是固定的，这种文件可以被称为【静态资源文件】<br>            文档、图片、视频<br>        2）如果文件存放的不是内容而是命令，这些命令只能在浏览器上编译和运行，<br>        这种文件可以成为【静态资源文件】<br>            .html .css .js<br>    4、动态资源文件<br>        如果文件存放的是命令，并且命令不能再浏览器编译和运行：<br>        只能在服务端计算机编译执行，这样的文件可以被称为【动态资源文件】<br>            .class<br>    5、静态资源文件与动态资源文件调用区别！</p>
+<pre><code>    静态文件被索要时，Http服务器直接通过【输出流】将静态文件中内容或者命令以
+    【二进制形式】推送给发起请求浏览器
     
+    动态文件被索要时，Http服务器需要创建当前class文件的实例对象，通过实例对象
+    调用对应的方法处理用户请求，通过【输出流】将运行结果以【二进制形式】推送给
+    发起请求浏览器。
+    
+    class student&#123;
+        public int add (int num1 , int num2) &#123;
+        intsum=num1+num2;
+        return sum;
+        &#125;
+    &#125;
+    Http服务器(自动)
+    Student stu = new Student();  new一个对象
+    int结果= stu.add(10,20);  使用对象调用方法
+    out .print (结果);  输出结果
+</code></pre>
+<p>4、开发人员在互联网通信流程中担负职责</p>
+<pre><code>1、控制浏览器行为
+
+2、开发动态资源文件解决用户需求
+</code></pre>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/11/04_Http%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8C%85/" class="archive-article-date">
-  	<time datetime="2022-02-11T12:02:23.234Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/11/01_%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%AE%AF%E6%B5%81%E7%A8%8B%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/11/03_CSS%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="archive-article-date">
-  	<time datetime="2022-02-11T12:02:00.026Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/11/01_%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%AE%AF%E6%B5%81%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-02-11T11:59:43.036Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2022/02/11/03_CSS%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/11/17_MyBatis%E6%A1%86%E6%9E%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/11/17_MyBatis%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2022-02-11T05:54:44.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/11/hello-world/" class="archive-article-date">
-  	<time datetime="2022-02-11T05:39:37.838Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/11/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -299,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
