@@ -9,16 +9,17 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C&#x2F;S通信模型C：client software ;客户端软件1、客户端软件专门安装在客户端计算机上2、帮助客户端计算机向指定服务端计算机发送请求，索要资源文件3、帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为    [文字，数字，图片，视频，命令] S：serversoftware;服务器软件1、服务器软件专门安装在服务端计算机_上2、服务器软件用于接收来自于特定的客户端软">
+  <meta name="description" content="C&#x2F;S通信模型C：client software ;客户端软件1、客户端软件专门安装在客户端计算机上2、帮助客户端计算机向指定服务端计算机发送请求，索要资源文件3、帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为[文字，数字，图片，视频，命令] S：serversoftware;服务器软件1、服务器软件专门安装在服务端计算机_上2、服务器软件用于接收来自于特定的客户端软件发送请">
 <meta property="og:type" content="article">
 <meta property="og:title" content="互联网通讯流程">
 <meta property="og:url" content="http://example.com/2022/02/16/%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%AE%AF%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="C&#x2F;S通信模型C：client software ;客户端软件1、客户端软件专门安装在客户端计算机上2、帮助客户端计算机向指定服务端计算机发送请求，索要资源文件3、帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为    [文字，数字，图片，视频，命令] S：serversoftware;服务器软件1、服务器软件专门安装在服务端计算机_上2、服务器软件用于接收来自于特定的客户端软">
+<meta property="og:description" content="C&#x2F;S通信模型C：client software ;客户端软件1、客户端软件专门安装在客户端计算机上2、帮助客户端计算机向指定服务端计算机发送请求，索要资源文件3、帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为[文字，数字，图片，视频，命令] S：serversoftware;服务器软件1、服务器软件专门安装在服务端计算机_上2、服务器软件用于接收来自于特定的客户端软件发送请">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-16T05:21:26.000Z">
-<meta property="article:modified_time" content="2022-02-16T05:33:37.932Z">
+<meta property="article:modified_time" content="2022-02-16T06:33:53.799Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java Learning">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -117,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/Hexo-Useing/" style="font-size: 10px;">Hexo Useing</a> <a href="/tags/Java-Learning/" style="font-size: 20px;">Java Learning</a>
 					</div>
 				</section>
 				
@@ -197,6 +198,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-Learning/" rel="tag">Java Learning</a></li></ul>
+	</div>
+
         
 
         
@@ -206,11 +211,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="C-x2F-S通信模型"><a href="#C-x2F-S通信模型" class="headerlink" title="C&#x2F;S通信模型"></a>C&#x2F;S通信模型</h1><p><strong>C：client software ;客户端软件</strong><br>1、客户端软件专门安装在客户端计算机上<br>2、帮助客户端计算机向指定服务端计算机发送请求，索要资源文件<br>3、帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为<br>    [文字，数字，图片，视频，命令]</p>
-<p><strong>S：serversoftware;服务器软件</strong><br>1、服务器软件专门安装在服务端计算机_上<br>2、服务器软件用于接收来自于特定的客户端软件发送请求<br>3、服务器软件在接收到请求之后自动的在服务端计算机上定位被访问的资源文件<br>4、服务器软件自动的将定位的文件内容解析为【二进制数据】通过网络发送回发起请求的客户端软件上<br>使用场景：C&#x2F;S普遍用于个人娱乐市场，比如微信，淘宝，京东，视频（优酷，B站）<br>大企业办公领域使用较少！<br>    优点：1、安全性高；2、有效降低服务端计算机的工作压力<br>    缺点：1、增加客户获得服务的成本2、更新较为繁琐</p>
-<h1 id="B-x2F-S通信模型"><a href="#B-x2F-S通信模型" class="headerlink" title="B&#x2F;S通信模型"></a>B&#x2F;S通信模型</h1><p><strong>B：browser，浏览器</strong><br>1、浏览器安装在客户端计算机软件<br>2、可以向任意服务器发送请求，索要资源文件<br>3、可以将服务器返回的【二进制数据】解析为【文字、数字、图片、视频、命令】</p>
-<p><strong>S：server software 服务器软件</strong><br>1、服务器软件专门安装在服务端计算机上<br>2、可以接收任意浏览器发送的请求<br>3、自动的在服务器计算机上定位被访问的资源文件<br>4、自动地将定位的资源文件内容以二进制形式发送回发起请求浏览器上！<br><strong>适用场景：</strong><br>既适用于个人娱乐市场，又广泛使用与企业日常活动<br><strong>优点：</strong><br>1、不会增加用户获得服务的成本<br>2、几乎不需要更新过浏览器<br><strong>缺点：</strong><br>1、几乎无法有效的对服务端计算机资源文件进行保护<br>2、服务端计算机工作压力异常巨大 【B&#x2F;S通信下高并发的解决方案！】</p>
-<h1 id="共享资源文件"><a href="#共享资源文件" class="headerlink" title="共享资源文件"></a>共享资源文件</h1><p>1、什么是共享资源文件：<br>可以通过网络进行传输的文件，都能被称为共享资源文件！<br>所有文件内容都可以通过网络传输，所有文件都是共享资源文件<br>2、Http服务器下对共享资源文件的分类<br>    1）静态资源文件<br>    2）动态资源文件<br>3、静态资源文件：<br>1）如果文件里面的内容是固定的，这种文件可以被称为【静态资源文件】<br>    文档、图片、视频<br>2）如果文件存放的不是内容而是命令，这些命令只能在浏览器上编译和运行，<br>    这种文件可以成为【静态资源文件】.html .css .js<br>4、动态资源文件<br>如果文件存放的是命令，并且命令不能再浏览器编译和运行：<br>只能在服务端计算机编译执行，这样的文件可以被称为【动态资源文件】.class<br>5、静态资源文件与动态资源文件调用区别！<br>静态文件被索要时，Http服务器直接通过【输出流】将静态文件中内容或者命令以【二进制形式】推送给发起请求浏览器<br>动态文件被索要时，Http服务器需要创建当前class文件的实例对象，通过实例对象调用对应的方法处理用户请求，通过【输出流】将运行结果以【二进制形式】推送给发起请求浏览器。<br>‘’’<br>    class student{<br>        public int add (int num1 , int num2) {<br>            intsum&#x3D;num1+num2;<br>            return sum;<br>        }<br>    }<br>‘’’<br>Http服务器(自动)<br>Student stu &#x3D; new Student();  new一个对象<br>int结果&#x3D; stu.add(10,20);  使用对象调用方法<br>out .print (结果);  输出结果</p>
+        <h1 id="C-x2F-S通信模型"><a href="#C-x2F-S通信模型" class="headerlink" title="C&#x2F;S通信模型"></a>C&#x2F;S通信模型</h1><h2 id="C：client-software-客户端软件"><a href="#C：client-software-客户端软件" class="headerlink" title="C：client software ;客户端软件"></a>C：client software ;客户端软件</h2><p>1、客户端软件专门安装在客户端计算机上<br>2、帮助客户端计算机向指定服务端计算机发送请求，索要资源文件<br>3、帮助客户端计算机将服务端计算机发送回来【二进制数据】解析为[文字，数字，图片，视频，命令]</p>
+<h2 id="S：serversoftware-服务器软件"><a href="#S：serversoftware-服务器软件" class="headerlink" title="S：serversoftware;服务器软件"></a>S：serversoftware;服务器软件</h2><p>1、服务器软件专门安装在服务端计算机_上<br>2、服务器软件用于接收来自于特定的客户端软件发送请求<br>3、服务器软件在接收到请求之后自动的在服务端计算机上定位被访问的资源文件<br>4、服务器软件自动的将定位的文件内容解析为【二进制数据】通过网络发送回发起请求的客户端软件上<br>使用场景：C&#x2F;S普遍用于个人娱乐市场，比如微信，淘宝，京东，视频（优酷，B站）<br>大企业办公领域使用较少！<br>    优点：1、安全性高；2、有效降低服务端计算机的工作压力<br>    缺点：1、增加客户获得服务的成本2、更新较为繁琐</p>
+<h1 id="B-x2F-S通信模型"><a href="#B-x2F-S通信模型" class="headerlink" title="B&#x2F;S通信模型"></a>B&#x2F;S通信模型</h1><h2 id="B：browser，浏览器"><a href="#B：browser，浏览器" class="headerlink" title="B：browser，浏览器"></a>B：browser，浏览器</h2><p>1、浏览器安装在客户端计算机软件<br>2、可以向任意服务器发送请求，索要资源文件<br>3、可以将服务器返回的【二进制数据】解析为【文字、数字、图片、视频、命令】</p>
+<h2 id="S：server-software-服务器软件"><a href="#S：server-software-服务器软件" class="headerlink" title="S：server software 服务器软件"></a>S：server software 服务器软件</h2><p>1、服务器软件专门安装在服务端计算机上<br>2、可以接收任意浏览器发送的请求<br>3、自动的在服务器计算机上定位被访问的资源文件<br>4、自动地将定位的资源文件内容以二进制形式发送回发起请求浏览器上！</p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>既适用于个人娱乐市场，又广泛使用与企业日常活动<br>优点：1、不会增加用户获得服务的成本；2、几乎不需要更新过浏览器<br>缺点：<br>1、几乎无法有效的对服务端计算机资源文件进行保护<br>2、服务端计算机工作压力异常巨大 【B&#x2F;S通信下高并发的解决方案！】</p>
+<h1 id="共享资源文件"><a href="#共享资源文件" class="headerlink" title="共享资源文件"></a>共享资源文件</h1><h2 id="什么是共享资源文件："><a href="#什么是共享资源文件：" class="headerlink" title="什么是共享资源文件："></a>什么是共享资源文件：</h2><p>可以通过网络进行传输的文件，都能被称为共享资源文件！<br>所有文件内容都可以通过网络传输，所有文件都是共享资源文件</p>
+<h2 id="Http服务器下对共享资源文件的分类"><a href="#Http服务器下对共享资源文件的分类" class="headerlink" title="Http服务器下对共享资源文件的分类"></a>Http服务器下对共享资源文件的分类</h2><p>1）静态资源文件<br>2）动态资源文件</p>
+<h2 id="静态资源文件："><a href="#静态资源文件：" class="headerlink" title="静态资源文件："></a>静态资源文件：</h2><p>1）如果文件里面的内容是固定的，这种文件可以被称为【静态资源文件】<br>    文档、图片、视频<br>2）如果文件存放的不是内容而是命令，这些命令只能在浏览器上编译和运行，<br>    这种文件可以成为【静态资源文件】.html .css .js</p>
+<h2 id="动态资源文件"><a href="#动态资源文件" class="headerlink" title="动态资源文件"></a>动态资源文件</h2><p>如果文件存放的是命令，并且命令不能再浏览器编译和运行：<br>只能在服务端计算机编译执行，这样的文件可以被称为【动态资源文件】.class </p>
+<h2 id="静态资源文件与动态资源文件调用区别！"><a href="#静态资源文件与动态资源文件调用区别！" class="headerlink" title="静态资源文件与动态资源文件调用区别！"></a>静态资源文件与动态资源文件调用区别！</h2><p>静态文件被索要时，Http服务器直接通过【输出流】将静态文件中内容或者命令以【二进制形式】推送给发起请求浏览器<br>动态文件被索要时，Http服务器需要创建当前class文件的实例对象，通过实例对象调用对应的方法处理用户请求，通过【输出流】将运行结果以【二进制形式】推送给发起请求浏览器。<br>class student{<br>    public int add (int num1 , int num2) {<br>        intsum&#x3D;num1+num2;<br>        return sum;<br>    }<br>}<br>Http服务器(自动)<br>Student stu &#x3D; new Student();  new一个对象<br>int结果&#x3D; stu.add(10,20);  使用对象调用方法<br>out .print (结果);  输出结果</p>
 <h1 id="开发人员在互联网通信流程中担负职责"><a href="#开发人员在互联网通信流程中担负职责" class="headerlink" title="开发人员在互联网通信流程中担负职责"></a>开发人员在互联网通信流程中担负职责</h1><p>1、控制浏览器行为<br>2、开发动态资源文件解决用户需求</p>
 
       
@@ -221,8 +231,17 @@
     
 <nav id="article-nav">
   
+    <a href="/2022/02/16/HTML%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          HTML语言笔记
+        
+      </div>
+    </a>
   
-    <a href="/2022/02/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2022/02/11/HelloWorld/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Hello World</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
