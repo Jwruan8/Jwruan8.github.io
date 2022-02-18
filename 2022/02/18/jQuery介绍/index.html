@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery介绍 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、jQuery是js库：库：相当于java的工具类，库是存放东西的， jQuery是存放js代码的地方， 放的用js代码写的function 2、dom对象和jquery对象dom对象：使用javascript的语法创建的对象叫做dom对象， 也就是js对象；var obj&#x3D;  document.getElementById(“txt1”)；obj是dom对象，也叫做js对象obj.v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery介绍">
+<meta property="og:url" content="http://example.com/2022/02/18/jQuery%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、jQuery是js库：库：相当于java的工具类，库是存放东西的， jQuery是存放js代码的地方， 放的用js代码写的function 2、dom对象和jquery对象dom对象：使用javascript的语法创建的对象叫做dom对象， 也就是js对象；var obj&#x3D;  document.getElementById(“txt1”)；obj是dom对象，也叫做js对象obj.v">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-18T00:33:34.000Z">
+<meta property="article:modified_time" content="2022-02-18T00:37:44.643Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://Jwruan8.github.io\img/weixin.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+
+<script src="/js/Counter.js"></script>
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主    页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/EL/" style="font-size: 10px;">EL</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Servlet/" style="font-size: 15px;">Servlet</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主    页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-jQuery介绍" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/02/18/jQuery%E4%BB%8B%E7%BB%8D/" class="article-date">
+  	<time datetime="2022-02-18T00:33:34.000Z" itemprop="datePublished">2022-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery介绍
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2022/02/18/jQuery%E4%BB%8B%E7%BB%8D/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="jQuery介绍">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、jQuery是js库："><a href="#1、jQuery是js库：" class="headerlink" title="1、jQuery是js库："></a>1、jQuery是js库：</h1><p>库：相当于java的工具类，库是存放东西的， jQuery是存放js代码的地方， 放的用js代码写的function</p>
+<h1 id="2、dom对象和jquery对象"><a href="#2、dom对象和jquery对象" class="headerlink" title="2、dom对象和jquery对象"></a>2、dom对象和jquery对象</h1><h2 id="dom对象："><a href="#dom对象：" class="headerlink" title="dom对象："></a>dom对象：</h2><p>使用javascript的语法创建的对象叫做dom对象， 也就是js对象；<br>var obj&#x3D;  document.getElementById(“txt1”)；obj是dom对象，也叫做js对象<br>obj.value；获取dom对象的属性，调用其方法。</p>
+<h2 id="jquery对象："><a href="#jquery对象：" class="headerlink" title="jquery对象："></a>jquery对象：</h2><p>使用jquery语法表示对象叫做jquery对象， 注意：jquery表示的对象都是数组；<br>例如：var jobj &#x3D;  $(“#txt1”)，jobj就是使用jquery语法表示的对象，也就是jquery对象，<br>它是一个数组，现在数组中就一个值。</p>
+<h2 id="dom对象可以和jquery对象相互的转换；"><a href="#dom对象可以和jquery对象相互的转换；" class="headerlink" title="dom对象可以和jquery对象相互的转换；"></a>dom对象可以和jquery对象相互的转换；</h2><p>dom对象可以转为jquery ， 语法：$(dom对象)<br>jquery对象也可以转为dom对象， 语法：从数组中获取第一个对象， 第一个对象就是dom对象，<br>使用[0]或者get{0)；</p>
+<h2 id="为什么要进行dom和jquery的转换："><a href="#为什么要进行dom和jquery的转换：" class="headerlink" title="为什么要进行dom和jquery的转换："></a>为什么要进行dom和jquery的转换：</h2><p>目的是要使用对象的方法，或者方法。</p>
+<p>当你是dom对象时，可以使用dom对象的属性或者方法， 如果你要想使用jquery提供的函数，必须是jquery对象才可以。 </p>
+<h1 id="3、基本选择器："><a href="#3、基本选择器：" class="headerlink" title="3、基本选择器："></a>3、基本选择器：</h1><p>选择器就是一个字符串，用来定位dom对象的。定位了dom对象，就可以通过jquery的函数操作dom；</p>
+<h2 id="常用的选择器："><a href="#常用的选择器：" class="headerlink" title="常用的选择器："></a>常用的选择器：</h2><p>1）id选择器；语法：$(“#dom对象的id值”)<br>通过dom对象的id定位dom对象的。 通过id找对象， id在当前页面中是唯一值。<br>2）class选择器；语法：$(“.class样式名)<br>class表示css中的样式， 使用样式的名称定位dom对象的。<br>3）标签选择器；语法： $(“标签名称”)<br>使用标签名称定位dom对象的<br>4）组合选择器；<br>5）所有选择器；</p>
+<h1 id="4、表单选择器："><a href="#4、表单选择器：" class="headerlink" title="4、表单选择器："></a>4、表单选择器：</h1><p>使用<input>标签的type属性值，定位dom对象的方式。<br>语法： $(“:type属性值”)<br>例如：<br>$(“:text”) ,选择的是所有的单行文本框，<br>$(“:button”) ,选择的是所有的按钮。</p>
+<h1 id="5、基本过滤器："><a href="#5、基本过滤器：" class="headerlink" title="5、基本过滤器："></a>5、基本过滤器：</h1><p>在定位了dom对象后，根据一些条件筛选dom对象。<br>过滤器有是一个字符串，用来筛选dom对象的。<br>过滤器不能单独使用， 必须和选择器一起使用。</p>
+<p>1）$(“选择器:first”)：第一个dom对象<br>2）$(“选择器:last”)：数组中的最后一个dom对象<br>3）$(“选择器:eq(数组的下标)”)：获取指定下标的dom对象<br>4）$(“选择器:lt(下标)”)：获取小于下标的所有dom对象<br>5）$(“选择器:gt(下标)”)：获取大于下标的所有dom对象</p>
+<h1 id="6、表单属性过滤器："><a href="#6、表单属性过滤器：" class="headerlink" title="6、表单属性过滤器："></a>6、表单属性过滤器：</h1><p>根据表单中dom对象的状态情况，定位dom对象的。<br>    启用状态， enabled ,<br>    不可用状态  disabled<br>    选择状态 ， checked ， 例如radio， checkbox </p>
+<h1 id="7、each语法（val，append，each这三个函数是使用最高的！）"><a href="#7、each语法（val，append，each这三个函数是使用最高的！）" class="headerlink" title="7、each语法（val，append，each这三个函数是使用最高的！）"></a>7、each语法（val，append，each这三个函数是使用最高的！）</h1><h2 id="1）可以对-数组，-json-，dom数组循环处理。"><a href="#1）可以对-数组，-json-，dom数组循环处理。" class="headerlink" title="1）可以对 数组， json ，dom数组循环处理。"></a>1）可以对 数组， json ，dom数组循环处理。</h2><p>数组， json中的每个成员都会调用一次处理函数。<br>var arr &#x3D; { 1, 2, 3} &#x2F;&#x2F;数组；<br>var json &#x3D; {“name”:”lisi”,”age”:20 } ；<br>var obj &#x3D; $(“:text”)；</p>
+<p>语法：<br>$.each( 循环的内容，处理函数 )：表示使用jquery的each，循环数组，每个数组成员，都会执行后面的“处理函数”一次。<br>$：相当于是java的一个类名<br>each：就是类中的静态方法。<br>静态方法调用，可以使用：类名.方法名称 </p>
+<p>处理函数：function(index, element) :<br>index, element都是自定义的形参， 名称自定义。<br>index：循环的索引<br>element：数组中的成员</p>
+<p>js循环数组：<br>for(var i&#x3D;0;i&lt;arr.length;i++){<br>var item &#x3D; arr[i]; &#x2F;&#x2F;数组成员<br>&#x2F;&#x2F;操作数组成员<br>shuchu( i , item);<br>}<br>function shuchu(index, element){<br>输出index ，element；<br>}</p>
+<h2 id="2）循环jquery对象，-jquery对象就是dom数组"><a href="#2）循环jquery对象，-jquery对象就是dom数组" class="headerlink" title="2）循环jquery对象， jquery对象就是dom数组"></a>2）循环jquery对象， jquery对象就是dom数组</h2><p>语法：jquery对象.each( function(index,element) {} )</p>
+<h1 id="8、jquery中给dom对象绑定事件"><a href="#8、jquery中给dom对象绑定事件" class="headerlink" title="8、jquery中给dom对象绑定事件"></a>8、jquery中给dom对象绑定事件</h1><h2 id="1）-选择器-事件名称-事件的处理函数"><a href="#1）-选择器-事件名称-事件的处理函数" class="headerlink" title="1）$(选择器).事件名称(事件的处理函数)"></a>1）$(选择器).事件名称(事件的处理函数)</h2><p>$(选择器)：定位dom对象， dom对象可以有多个， 这些dom对象都绑定事件了<br>事件名称：就是js中事件去掉on的部分， 例如 js中的单击事件 onclick(),jquery中的事件名称，就是click，都是小写的。<br>事件的处理函数：就是一个function ，当事件发生时，执行这个函数的内容。<br>例如给id是btn的按钮绑定单击事件；<br>$(“#btn”).click(funtion(){<br>alert(“btn按钮单击了”)；<br>})</p>
+<h2 id="2）on-事件绑定"><a href="#2）on-事件绑定" class="headerlink" title="2）on 事件绑定"></a>2）on 事件绑定</h2><p>$(选择器).on( 事件名称 , 事件的处理函数)<br>事件名称：就是js事件中去掉on的部分，例如js中onclick ，这里就是click<br>事件的处理函数：function 定义。<br>例如， <input type="button" id="btn"><br>$(“#btn”).on(“click”, function() { 处理按钮单击 } )</p>
+<h1 id="9、使用jquery的函数，实现ajax请求的处理。"><a href="#9、使用jquery的函数，实现ajax请求的处理。" class="headerlink" title="9、使用jquery的函数，实现ajax请求的处理。"></a>9、使用jquery的函数，实现ajax请求的处理。</h1><p>没有jquery之前，使用XMLHttpRequest做ajax ， 有4个步骤。  jquery简化了ajax请求的处理。<br>使用三个函数可以实现ajax请求的处理：<br>1） $.ajax() : jquery中实现ajax的核心函数。<br>2） $.post() : 使用post方式做ajax请求。<br>3） $.get() : 使用get方式发送ajax请求。<br>$.post()和$.get() 他们在内部都是调用的 $.ajax()<br>介绍 $.ajax函数的使用， 函数的参数表示请求的url， 请求的方式，参数值等信息。<br>$.ajax()参数是一个json的结构。<br>例如： $.ajax(  {名称:值， 名称1:值1….. } )<br>例如：<br>$.ajax(  {  async:true ,<br>contentType:”application&#x2F;json” ,<br>data: {name:”lisi”,age:20 },<br>dataType:”json”,<br>error:function(){请求出现错误时，执行的函数},<br>success:function( data ) {&#x2F;&#x2F; data 就是responseText, 是jquery处理后的数据。},<br>url:”bmiAjax”,<br>type:”get”<br>})</p>
+<h1 id="10、json结构的参数说明："><a href="#10、json结构的参数说明：" class="headerlink" title="10、json结构的参数说明："></a>10、json结构的参数说明：</h1><p>1）async：是一个boolean类型的值， 默认是true ，表示异步请求的。<br>可以不写async这个配置项，xmlHttp.open(get,url,true)，第三个参数一样的意思。<br>2）contentType: 一个字符串，表示从浏览器发送服务器的参数的类型。 可以不写。<br>例如你想表示请求的参数是json格式的， 可以写application&#x2F;json<br>3）data：可以是字符串，数组，json，表示请求的参数和参数值。 常用的是json格式的数据<br>4）dataType：表示期望从服务器端返回的数据格式，可选的有： xml ， html ，text ，json<br>当我们使用$.ajax()发送请求时， 会把dataType的值发送给服务器， 那我们的servlet能够<br>读取到dataType的值，就知道你的浏览器需要的是 json或者xml的数据，那么服务器就可以返回你需要的数据格式。<br>5）error：一个function ，表示当请求发生错误时，执行的函数。<br>error:function() {   发生错误时执行  }<br>6）success：一个function , 请求成功了，从服务器端返回了数据，会执行success指定函数<br>之前使用XMLHttpRequest对象， 当readyState&#x3D;&#x3D;4 &amp;&amp; status&#x3D;&#x3D;200的时候。<br>7）url：请求的地址<br>8）type：请求方式，get或者post， 不用区分大小写。 默认是get方式。<br>主要使用的是 url , data，dataType，success ；</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/18/JDK%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86AOP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          JDK动态代理AOP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/18/Ajax%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ajax介绍</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="jQuery介绍" data-title="jQuery介绍" data-url="http://example.com/2022/02/18/jQuery%E4%BB%8B%E7%BB%8D/"  data-images="http://Jwruan8.github.io\img/weixin.jpg" data-content="jQuery介绍">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 John Doe
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

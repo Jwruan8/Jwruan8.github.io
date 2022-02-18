@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript基础应用篇 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、JavaScript作用：帮助浏览器对用户提出请求进行处理；一个BOM有多个document，一个document有多个DOM； 二、DOM对象：1、DOM &#x3D; Document Object Model，文档模型对象2、JavaScript不能直接操作HTM标签，只能通过HTM标签，关联的DOM对象对HTM标签下达指令。 三、DOM对象生命周期：1、浏览器在接收到HTML文件之后，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript基础应用篇">
+<meta property="og:url" content="http://example.com/2022/02/18/JavaScript%E5%9F%BA%E7%A1%80%E5%BA%94%E7%94%A8%E7%AF%87/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、JavaScript作用：帮助浏览器对用户提出请求进行处理；一个BOM有多个document，一个document有多个DOM； 二、DOM对象：1、DOM &#x3D; Document Object Model，文档模型对象2、JavaScript不能直接操作HTM标签，只能通过HTM标签，关联的DOM对象对HTM标签下达指令。 三、DOM对象生命周期：1、浏览器在接收到HTML文件之后，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-17T23:57:03.000Z">
+<meta property="article:modified_time" content="2022-02-18T00:03:06.091Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://Jwruan8.github.io\img/weixin.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+
+<script src="/js/Counter.js"></script>
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主    页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/EL/" style="font-size: 10px;">EL</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Servlet/" style="font-size: 15px;">Servlet</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主    页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-JavaScript基础应用篇" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/02/18/JavaScript%E5%9F%BA%E7%A1%80%E5%BA%94%E7%94%A8%E7%AF%87/" class="article-date">
+  	<time datetime="2022-02-17T23:57:03.000Z" itemprop="datePublished">2022-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript基础应用篇
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2022/02/18/JavaScript%E5%9F%BA%E7%A1%80%E5%BA%94%E7%94%A8%E7%AF%87/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript基础应用篇">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、JavaScript作用："><a href="#一、JavaScript作用：" class="headerlink" title="一、JavaScript作用："></a>一、JavaScript作用：</h1><p>帮助浏览器对用户提出请求进行处理；一个BOM有多个document，一个document有多个DOM；</p>
+<h1 id="二、DOM对象："><a href="#二、DOM对象：" class="headerlink" title="二、DOM对象："></a>二、DOM对象：</h1><p>1、DOM &#x3D; Document Object Model，文档模型对象<br>2、JavaScript不能直接操作HTM标签，只能通过HTM标签，关联的DOM对象对HTM标签下达指令。</p>
+<h1 id="三、DOM对象生命周期："><a href="#三、DOM对象生命周期：" class="headerlink" title="三、DOM对象生命周期："></a>三、DOM对象生命周期：</h1><p>1、浏览器在接收到HTML文件之后，将HTML文件标签加载到浏览器缓存中，每当加载一个HTML标签时候，自动为这个标签生成一个实例对象，这个实例对象就是DOM对象<br>2、在浏览器关闭之前或请求其他资源文件之前，本次生成的DOM对象一直存活在浏览器缓存中；<br>3、在浏览器关闭时候,浏览器缓存中dom对象将要被销毁<br>4、在浏览器请求到新资源文件后，浏览器缓存中原有的dom对象将会被覆盖</p>
+<h1 id="四、document对象"><a href="#四、document对象" class="headerlink" title="四、document对象:"></a>四、document对象:</h1><p>1、document对象被称为【文档对象】<br>2、document对象用于在浏览器内存中根据定位条件定位DOM对象</p>
+<h1 id="五、document对象生命周期"><a href="#五、document对象生命周期" class="headerlink" title="五、document对象生命周期:"></a>五、document对象生命周期:</h1><p>1、在浏览器将网页中所有标签加载完毕后，在内存中将使用【树形结构】存储这些DOM对象。<br>在树形结构生成完毕后由浏览器生成一个document对象管理这颗树(DOM树)；<br>即在浏览器将接收网页中标签加载完毕后，自动在浏览器内存生成一个document对象。<br>2、一个浏览器运行期间，只会生成一个document对象。<br>3、在浏览器关闭时，负责将document对象进行销毁。</p>
+<p>注意：<br>1、一个浏览器窗口只会生成一个document对象；<br>考试管理系统界面由三个部分，叫做三个窗口，会有三个document进行管理；<br>2、一个HTML文件就会有一个document；<br>3、一个BOM有多个document，一个document有多个DOM；</p>
+<h1 id="六、通过document对象定位DOM对象方式："><a href="#六、通过document对象定位DOM对象方式：" class="headerlink" title="六、通过document对象定位DOM对象方式："></a>六、通过document对象定位DOM对象方式：</h1><h2 id="1、根据HTML标签的ID属性值定位DOM对象"><a href="#1、根据HTML标签的ID属性值定位DOM对象" class="headerlink" title="1、根据HTML标签的ID属性值定位DOM对象"></a>1、根据HTML标签的ID属性值定位DOM对象</h2><p>命令格式：var domobj &#x3D; document.getElementById(“id属性值”)；<br>举个栗子：var domobj &#x3D; document.getElementById (“one”) ;<br>通知document对象定位id属性等于one的标签关联的DOM对象</p>
+<h2 id="2、根据HTML标签的name属性值定位DOM对象"><a href="#2、根据HTML标签的name属性值定位DOM对象" class="headerlink" title="2、根据HTML标签的name属性值定位DOM对象"></a>2、根据HTML标签的name属性值定位DOM对象</h2><p>命令格式：var domArray &#x3D; document.getElementsByName (“name属性值”)；<br>举个栗子：&lt;input type&#x3D;”checkbox” name&#x3D;”deptNo” value&#x3D;”10”&gt;部门10<br>&lt;input type&#x3D;”checkbox” name&#x3D;”deptNo” value&#x3D;”20”&gt;部门20<br>&lt;input type&#x3D;”checkbox” name&#x3D;”deptNo” value&#x3D;”30”&gt;部门30<br>var domArray &#x3D;document.getElementsByName (“deptNo”)；<br>通知document对象将所有name属性等于deptNo的标签关联的DOM对象进行定位并<br>封装到一个数组进行返回。domArray就是一个数组存放本次返回的所有DOM对象。</p>
+<h2 id="3、根据HTML标签类型定位DOM对象"><a href="#3、根据HTML标签类型定位DOM对象" class="headerlink" title="3、根据HTML标签类型定位DOM对象"></a>3、根据HTML标签类型定位DOM对象</h2><p>命令格式：var domarray &#x3D;document.getElementsByTagName(“标签类型名”);<br>举个栗子：vardomArray &#x3D; document.getElementsByTagName ( “p”);<br>&lt;p&gt;段落标签&lt;&#x2F;p&gt;<br>通知document对象将所有段落标签关联的dom对象进行定位并封装到一个数组返回；</p>
+<h1 id="七、DOM对象对HTML标签属性操作"><a href="#七、DOM对象对HTML标签属性操作" class="headerlink" title="七、DOM对象对HTML标签属性操作"></a>七、DOM对象对HTML标签属性操作</h1><h2 id="1、DOM对象对标签value属性进行取值与赋值操作"><a href="#1、DOM对象对标签value属性进行取值与赋值操作" class="headerlink" title="1、DOM对象对标签value属性进行取值与赋值操作"></a>1、DOM对象对标签value属性进行取值与赋值操作</h2><p>取值操作：<br>var domObj&#x3D; document.getElementById(“one”)；<br>var num &#x3D; domobj.value；<br>赋值操作：<br>var domobj &#x3D; document.getElementById(“one”)：<br>domobj.value &#x3D; “abc”；</p>
+<h2 id="2、DOM对象对标签中样式属性进行取值与赋值操作"><a href="#2、DOM对象对标签中样式属性进行取值与赋值操作" class="headerlink" title="2、DOM对象对标签中样式属性进行取值与赋值操作"></a>2、DOM对象对标签中样式属性进行取值与赋值操作</h2><p>取值操作：<br>var domobj &#x3D; document.getElementById(“one”)；&#x2F;&#x2F;读取当前标签【背景颜色属性】值<br>var color &#x3D; domobj.style.背景颜色属性；<br>赋值操作：<br>var domobj &#x3D; document.getElementById(“one”)；&#x2F;&#x2F;通过DOM对象对背景颜色属进行赋值<br>domobj.style.背景颜色属性&#x3D;值；</p>
+<h2 id="3、DOM对象对标签中状态属性进行取值与赋值操作"><a href="#3、DOM对象对标签中状态属性进行取值与赋值操作" class="headerlink" title="3、DOM对象对标签中状态属性进行取值与赋值操作"></a>3、DOM对象对标签中状态属性进行取值与赋值操作</h2><p>状态属性：状态属性的值都是boolean类型；<br>disabled &#x3D; true；表示当前标签不可以使用<br>disabled &#x3D; false；表示当前标签可以使用<br>checked：只存在与radio标签与checkbox标签；<br>checked &#x3D; true ；表示当前标签被选中了。<br>checked &#x3D; false；表示当前标签未被选中。<br>取值操作：<br>var domobj &#x3D; document.getElementById(“one”) ；<br>var num &#x3D; domObj.checked；<br>赋值操作：<br>var domobj&#x3D; document.getElementById(“one”) ；<br>domobj.checked &#x3D; true；<br>4、DOM对象对标签中文字显示内容进行赋值与取值<br>文字显示内容：只存在于双目标签之间;&lt;tr&gt;100&lt;&#x2F;tr&gt;<br>取值操作：<br>var domObj &#x3D; document.getElementByid(“one”) ；<br>var num1 &#x3D; domobj.innerText；<br>赋值操作：<br>var domObj &#x3D; document.getElementByid(“one”)；<br>domObj.innerText &#x3D;值；</p>
+<h2 id="innerText与innerHTM区别；"><a href="#innerText与innerHTM区别；" class="headerlink" title="innerText与innerHTM区别；"></a>innerText与innerHTM区别；</h2><p>innerText与innerHTML都可以对标签文字显示内容属性进行赋值与取值：<br>innerText只能接收字符串；<br>innerHTML既可以接收字符串又可以接收html标签；</p>
+<h1 id="八、JavaScript监听事件"><a href="#八、JavaScript监听事件" class="headerlink" title="八、JavaScript监听事件"></a>八、JavaScript监听事件</h1><h2 id="1、监听事件："><a href="#1、监听事件：" class="headerlink" title="1、监听事件："></a>1、监听事件：</h2><p>监听用户在何时以何种方式对当前标签进行操作；<br>当监听到相关行为时，通知浏览器调用对应Javascript函数对当前用户请求进行处理；</p>
+<h2 id="2、监听事件分类："><a href="#2、监听事件分类：" class="headerlink" title="2、监听事件分类："></a>2、监听事件分类：</h2><p>1）监听用户何时使用鼠标操作当前标签；<br>2）监听用户何时使用键盘操作当前标签；</p>
+<h2 id="3、监听用户何时使用鼠标操作当前标签："><a href="#3、监听用户何时使用鼠标操作当前标签：" class="headerlink" title="3、监听用户何时使用鼠标操作当前标签："></a>3、监听用户何时使用鼠标操作当前标签：</h2><p>1）onclick：监听用户何时使用鼠标【单击】当前标签；<br>2）onblur：监听用户何时通过鼠标让当前标签丢失【光标】<br>3）onfocus：监听用户何时通过鼠标让当前标签获得【光标】<br>4）onmopseout：监听用户何时将鼠标从当前标签上方【移开】；<br>5）onmouseover：监听用户何时将鼠标【悬停】当前标签上方；</p>
+<h2 id="4、监听用户何时使用键盘操作当前标签"><a href="#4、监听用户何时使用键盘操作当前标签" class="headerlink" title="4、监听用户何时使用键盘操作当前标签"></a>4、监听用户何时使用键盘操作当前标签</h2><p>1）onkeydown：监听用户何时在当前标签上【按下键盘】<br>2）onkeyup：监听用户何时在当前标签上【弹起键盘】</p>
+<h1 id="九、onload监听事件："><a href="#九、onload监听事件：" class="headerlink" title="九、onload监听事件："></a>九、onload监听事件：</h1><p>1、作用：监听浏览器何时将网页中HTML标签加载完毕<br>2、意义：浏览器每加载一个HTML标签时，自动在内存生成一个dom对象。<br>在浏览器将网页所有标签加载完毕时，意味当前网页中所有标签都生成对应DOM对象<br>3、使用：<br>&lt;script type&#x3D;”text&#x2F;javascript”&gt;<br>function fun1() {<br>window. alert(“fun1 is run. . .”)；<br>}<br>&lt;&#x2F;script&gt;<br>&lt;body onload&#x3D;”fun1 () “&gt;<br>&lt;&#x2F;body&gt;</p>
+<h1 id="十、基于DOM对象实现监听事件与HTML标签之间绑定"><a href="#十、基于DOM对象实现监听事件与HTML标签之间绑定" class="headerlink" title="十、基于DOM对象实现监听事件与HTML标签之间绑定"></a>十、基于DOM对象实现监听事件与HTML标签之间绑定</h1><p>1、前提：实际开发过程中，同一个监听事件往往与多个HTML标签进行绑定，这样增加开发强度，在未来维护过程中增加维护难度<br>2、命令形式：<br>domobj.监听事件名 &#x3D; 处理函数名；<br><em>此处处理函数名后面是不能出现()</em><br>3、举个栗子：<br>var domobj &#x3D; document.getElementById(“one” )；<br>domobj.onclick &#x3D; fun1；&#x2F;&#x2F; 注意函数名后面不能有()<br>相当于；<br>&lt;input type&#x3D;”button” id&#x3D;”one” onclick&#x3D;”fun1()”&gt;&#x2F;&#x2F;  此处函数名后面必须有()</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/18/JavaScript%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          JavaScript高级应用篇
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/18/JavaScript%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript语法介绍篇</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="JavaScript基础应用篇" data-title="JavaScript基础应用篇" data-url="http://example.com/2022/02/18/JavaScript%E5%9F%BA%E7%A1%80%E5%BA%94%E7%94%A8%E7%AF%87/"  data-images="http://Jwruan8.github.io\img/weixin.jpg" data-content="JavaScript基础应用篇">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 John Doe
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

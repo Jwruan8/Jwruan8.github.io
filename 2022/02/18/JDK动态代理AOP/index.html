@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JDK动态代理AOP | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#（重点）动态代理（理解）： 基于反射机制。 掌握的程度1、什么是动态代理 ？使用jdk的反射机制，创建对象的能力， 创建的是代理类的对象。 而不用你创建类文件。不用写java文件。动态：在程序执行时，调用jdk提供的方法才能创建代理类的对象。jdk动态代理，必须有接口，目标类必须实现接口， 没有接口时，需要使用cglib动态代理 2、知道动态代理能做什么 ？可以在不改变原来目标方法功能的前提下，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK动态代理AOP">
+<meta property="og:url" content="http://example.com/2022/02/18/JDK%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86AOP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#（重点）动态代理（理解）： 基于反射机制。 掌握的程度1、什么是动态代理 ？使用jdk的反射机制，创建对象的能力， 创建的是代理类的对象。 而不用你创建类文件。不用写java文件。动态：在程序执行时，调用jdk提供的方法才能创建代理类的对象。jdk动态代理，必须有接口，目标类必须实现接口， 没有接口时，需要使用cglib动态代理 2、知道动态代理能做什么 ？可以在不改变原来目标方法功能的前提下，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-18T00:38:06.000Z">
+<meta property="article:modified_time" content="2022-02-18T00:43:12.173Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JDK">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://Jwruan8.github.io\img/weixin.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+
+<script src="/js/Counter.js"></script>
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主    页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/EL/" style="font-size: 10px;">EL</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Servlet/" style="font-size: 15px;">Servlet</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主    页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-JDK动态代理AOP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/02/18/JDK%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86AOP/" class="article-date">
+  	<time datetime="2022-02-18T00:38:06.000Z" itemprop="datePublished">2022-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JDK动态代理AOP
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/" rel="tag">JDK</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2022/02/18/JDK%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86AOP/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JDK动态代理AOP">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#（重点）动态代理（理解）： 基于反射机制。</p>
+<h1 id="掌握的程度"><a href="#掌握的程度" class="headerlink" title="掌握的程度"></a>掌握的程度</h1><h2 id="1、什么是动态代理-？"><a href="#1、什么是动态代理-？" class="headerlink" title="1、什么是动态代理 ？"></a>1、什么是动态代理 ？</h2><p>使用jdk的反射机制，创建对象的能力， 创建的是代理类的对象。 而不用你创建类文件。不用写java文件。<br>动态：在程序执行时，调用jdk提供的方法才能创建代理类的对象。<br>jdk动态代理，必须有接口，目标类必须实现接口， 没有接口时，需要使用cglib动态代理</p>
+<h2 id="2、知道动态代理能做什么-？"><a href="#2、知道动态代理能做什么-？" class="headerlink" title="2、知道动态代理能做什么 ？"></a>2、知道动态代理能做什么 ？</h2><p>可以在不改变原来目标方法功能的前提下， 可以在代理中增强自己的功能代码。<br>程序开发中的意思。<br>比如：你所在的项目中，有一个功能是其他人（公司的其它部门，其它小组的人）写好的，你可以使用。<br>GoNong.class ,  GoNong gn &#x3D; new GoNong(), gn.print();</p>
+<p>你发现这个功能，现在还缺一点， 不能完全满足我项目的需要。<br>我需要在gn.print()执行后，需要自己在增加代码。<br>用代理实现 gn.print（）调用时， 增加自己代码， 而不用去改原来的 GoNong文件。</p>
+<p>后面会讲 mybatis ，spring </p>
+<h1 id="1、代理"><a href="#1、代理" class="headerlink" title="1、代理"></a>1、代理</h1><p>代购， 中介，换ip，商家等等</p>
+<p>比如有一家美国的大学， 可以对全世界招生。 留学中介（代理）</p>
+<p>留学中介（代理）： 帮助这家美国的学校招生，  中介是学校的代理， 中介是代替学校完成招生功能。<br>代理特点：</p>
+<ol>
+<li>中介和代理他们要做的事情是一致的：  招生。 </li>
+<li>中介是学校代理， 学校是目标。</li>
+<li>家长—中介（学校介绍，办入学手续）—-美国学校。</li>
+<li>中介是代理，不能白干活，需要收取费用。</li>
+<li>代理不让你访问到目标。</li>
+</ol>
+<p>为什么要找中介 ？ </p>
+<ol>
+<li>中介是专业的，方便</li>
+<li>家长现在不能自己去找学校。 家长没有能力访问学校。 或者美国学校不接收个人来访。<br>买东西都是商家卖， 商家是某个商品的代理， 你个人买东西， 肯定不会让你接触到厂家的。</li>
+</ol>
+<h1 id="2、在开发中的情况，你有a类，-本来是调用c类的方法，完成某个功能，但是c不让a调用。"><a href="#2、在开发中的情况，你有a类，-本来是调用c类的方法，完成某个功能，但是c不让a调用。" class="headerlink" title="2、在开发中的情况，你有a类， 本来是调用c类的方法，完成某个功能，但是c不让a调用。"></a>2、在开发中的情况，你有a类， 本来是调用c类的方法，完成某个功能，但是c不让a调用。</h1><p>a —–不能调用 c的方法。<br>在 a 和 c 之间创建一个 b 代理，c 让 b 访问。<br>a –&gt;访问b—&gt;访问c</p>
+<p>实际的例子： 登录，注册有验证码， 验证码是手机短信。</p>
+<p>中国移动， 联通能发短信。<br>中国移动， 联通能有子公司，或者关联公司，他们面向社会提供短信的发送功能</p>
+<p>张三项目发送短信—-子公司，或者关联公司—–中国移动， 联通</p>
+<h1 id="3、使用代理模式的作用"><a href="#3、使用代理模式的作用" class="headerlink" title="3、使用代理模式的作用"></a>3、使用代理模式的作用</h1><p>1、功能增强： 在你原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强。<br>2、控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
+<h1 id="4、实现代理的方式"><a href="#4、实现代理的方式" class="headerlink" title="4、实现代理的方式"></a>4、实现代理的方式</h1><h2 id="1、静态代理-："><a href="#1、静态代理-：" class="headerlink" title="1、静态代理 ："></a>1、静态代理 ：</h2><p>1）代理类是自己手工实现的，自己创建一个java类，表示代理类。<br>2）同时你所要代理的目标类是确定的。<br>特点：1）实现简单  2）容易理解。3）提前确定好了代理的关系，写死了的<br>缺点：当你的项目中，目标类和代理类很多时候，有以下的缺点：<br>1）当目标类增加了， 代理类可能也需要成倍的增加。 代理类数量过多。<br>2）当你的接口中功能增加了， 或者修改了，会影响众多的实现类，厂家类，代理都需要修改。影响比较多。<br>模拟一个用户购买u盘的行为。<br>用户是客户端类<br>商家：代理，代理某个品牌的u盘。<br>厂家：目标类。</p>
+<p>三者的关系： 用户（客户端）—商家（代理）—厂家（目标）<br>商家和厂家都是卖u盘的，他们完成的功能是一致的，都是卖u盘。</p>
+<p>实现步骤：</p>
+<ol>
+<li>创建一个接口，定义卖u盘的方法， 表示你的厂家和商家做的事情。</li>
+<li>创建厂家类，实现1步骤的接口</li>
+<li>创建商家，就是代理，也需要实现1步骤中的接口。</li>
+<li>创建客户端类，调用商家的方法买一个u盘。</li>
+</ol>
+<p>代理类完成的功能： </p>
+<ol>
+<li>目标类中方法的调用</li>
+<li>功能增强</li>
+</ol>
+<h2 id="2、动态代理"><a href="#2、动态代理" class="headerlink" title="2、动态代理"></a>2、动态代理</h2><p>在静态代理中目标类很多时候，可以使用动态代理，避免静态代理的缺点。<br>动态代理中目标类即使很多， 1）代理类数量可以很少， 2）当你修改了接口中的方法时，不会影响代理类。</p>
+<p>动态代理： 在程序执行过程中，使用jdk的反射机制，创建代理类对象， 并动态的指定要代理目标类。<br>换句话说： 动态代理是一种创建java对象的能力，让你不用创建TaoBao类，就能创建代理类对象。</p>
+<p>在java中，要想创建对象：<br>1、创建类文件， java文件编译为class<br>2、使用构造方法，创建类的对象。</p>
+<h2 id="动态代理的实现（有两种）："><a href="#动态代理的实现（有两种）：" class="headerlink" title="动态代理的实现（有两种）："></a>动态代理的实现（有两种）：</h2><p>1、jdk动态代理（理解）： 使用java反射包中的类和接口实现动态代理的功能。<br>反射包 java.lang.reflect , 里面有三个类：InvocationHandler , Method, Proxy。</p>
+<ol start="2">
+<li>cglib动态代理（了解）: cglib是第三方的工具库， 创建代理对象。<br>cglib的原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。</li>
+</ol>
+<p>因为cglib是继承，重写方法，所以要求目标类不能是final的， 方法也不能是final的。<br>cglib的要求目标类比较宽松， 只要能继承就可以了。<br>cglib在很多的框架中使用， 比如 mybatis ，spring框架中都有使用。</p>
+<h1 id="5、jdk动态代理："><a href="#5、jdk动态代理：" class="headerlink" title="5、jdk动态代理："></a>5、jdk动态代理：</h1><p>1、反射， Method类，表示方法。类中的方法。 通过Method可以执行某个方法。</p>
+<h2 id="2、jdk动态代理的实现"><a href="#2、jdk动态代理的实现" class="headerlink" title="2、jdk动态代理的实现"></a>2、jdk动态代理的实现</h2><p>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.<br>1）InvocationHandler 接口（调用处理器）：就一个方法invoke（）<br>invoke()：表示代理对象要执行的功能代码。<br>你的代理类要完成的功能就写在invoke()方法中。</p>
+<p>代理类完成的功能：<br>1、调用目标方法，执行目标方法的功能<br>2、功能增强，在目标方法调用时，增加功能。</p>
+<p>InvocationHandler 接口方法原型：参数：<br>Object proxy：jdk创建的代理对象，无需赋值。<br>Method method：目标类中的方法，jdk提供method对象的<br>Object[] args：目标类中方法的参数， jdk提供的。</p>
+<p>public Object invoke(Object proxy, Method method, Object[] args)<br>InvocationHandler 接口：表示你的代理要干什么。<br>怎么用：<br>1、创建类实现接口InvocationHandler<br>2、重写invoke()方法， 把原来静态代理中代理类要完成的功能，写在这。</p>
+<p>2）Method类：表示方法的， 确切的说就是目标类中的方法。和InvocationHandler 接口不同。<br>作用：通过Method可以执行某个目标类的方法，Method.invoke()；<br>method.invoke(目标对象，方法的参数)<br>Object ret &#x3D; method.invoke(service2, “李四”);</p>
+<p>说明： method.invoke（）就是用来执行目标方法的，等同于静态代理中的<br>&#x2F;&#x2F;向厂家发送订单，告诉厂家，我买了u盘，厂家发货<br>float price &#x3D; factory.sell(amount); &#x2F;&#x2F;厂家的价格。</p>
+<p>3）Proxy类：核心的对象，创建代理对象。之前创建对象都是 new 类的构造方法()<br>现在我们是使用Proxy类的方法，代替new的使用。 </p>
+<p>方法： 静态方法 newProxyInstance()<br>作用是： 创建代理对象， 等同于静态代理中的TaoBao taoBao &#x3D; new TaoBao();</p>
+<p>public static Object newProxyInstance(ClassLoader loader,Class&lt;?&gt;[] interfaces,InvocationHandler h)</p>
+<p>静态方法 newProxyInstance() 参数：<br>1、ClassLoader loader 类加载器，负责向内存中加载对象的。 使用反射获取对象的<br>ClassLoader类a , a.getCalss().getClassLoader(),  目标对象的类加载器<br>2、Class&lt;?&gt;[] interfaces： 接口，目标对象实现的接口，也是反射获取的。<br>3、InvocationHandler handle：我们自己写的，代理类要完成的功能。<br>返回值：就是代理对象</p>
+<h2 id="3、实现动态代理的步骤："><a href="#3、实现动态代理的步骤：" class="headerlink" title="3、实现动态代理的步骤："></a>3、实现动态代理的步骤：</h2><p>1、创建接口，定义目标类要完成的功能<br>2、创建目标类实现接口<br>3、创建InvocationHandler接口的实现类，在invoke方法中完成代理类的功能<br>1）调用目标方法<br>2）增强功能</p>
+<h2 id="4、使用Proxy类的静态方法，创建代理对象。-并把返回值转为接口类型。"><a href="#4、使用Proxy类的静态方法，创建代理对象。-并把返回值转为接口类型。" class="headerlink" title="4、使用Proxy类的静态方法，创建代理对象。 并把返回值转为接口类型。"></a>4、使用Proxy类的静态方法，创建代理对象。 并把返回值转为接口类型。</h2>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/18/Maven%E4%BB%8B%E7%BB%8D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Maven介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/18/jQuery%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery介绍</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="JDK动态代理AOP" data-title="JDK动态代理AOP" data-url="http://example.com/2022/02/18/JDK%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86AOP/"  data-images="http://Jwruan8.github.io\img/weixin.jpg" data-content="JDK动态代理AOP">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 John Doe
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

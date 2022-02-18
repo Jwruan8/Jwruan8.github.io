@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MVC开发规则 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、介绍：1、MVC开发规则制定了互联网通信开发过程中必须出现角色有哪些2、MVc开发规则制定了互联网通信开发过程中必须出现角色担负职责3、MVC开发规则制定了互联网通信开发过程中必须出现角色的出场顺序 二、角色：DAO对象：DAO对象提供某张表文件的操作细节，降低对表文件操作难度。避免反复开发表文件操作的代码提高代码复用性Service对象：服务对象，提供【业务】的具体解决方案。Service对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVC开发规则">
+<meta property="og:url" content="http://example.com/2022/02/18/MVC%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、介绍：1、MVC开发规则制定了互联网通信开发过程中必须出现角色有哪些2、MVc开发规则制定了互联网通信开发过程中必须出现角色担负职责3、MVC开发规则制定了互联网通信开发过程中必须出现角色的出场顺序 二、角色：DAO对象：DAO对象提供某张表文件的操作细节，降低对表文件操作难度。避免反复开发表文件操作的代码提高代码复用性Service对象：服务对象，提供【业务】的具体解决方案。Service对">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-18T00:06:18.000Z">
+<meta property="article:modified_time" content="2022-02-18T00:59:03.132Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="MVC">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://Jwruan8.github.io\img/weixin.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+
+<script src="/js/Counter.js"></script>
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主    页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/EL/" style="font-size: 10px;">EL</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Servlet/" style="font-size: 15px;">Servlet</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主    页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-MVC开发规则" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/02/18/MVC%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/" class="article-date">
+  	<time datetime="2022-02-18T00:06:18.000Z" itemprop="datePublished">2022-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MVC开发规则
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/" rel="tag">MVC</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2022/02/18/MVC%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="MVC开发规则">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、介绍："><a href="#一、介绍：" class="headerlink" title="一、介绍："></a>一、介绍：</h1><p>1、MVC开发规则制定了互联网通信开发过程中必须出现角色有哪些<br>2、MVc开发规则制定了互联网通信开发过程中必须出现角色担负职责<br>3、MVC开发规则制定了互联网通信开发过程中必须出现角色的出场顺序</p>
+<h1 id="二、角色："><a href="#二、角色：" class="headerlink" title="二、角色："></a>二、角色：</h1><p>DAO对象：DAO对象提供某张表文件的操作细节，降低对表文件操作难度。避免反复开发表文件操作的代码提高代码复用性<br>Service对象：服务对象，提供【业务】的具体解决方案。<br>Service对象一个方法指定一个业务的解决方案。避免业务开发重复性开发行为，提供复用性，网站每一个业务都有一个独立标准解决方案。</p>
+<h1 id="三、业务："><a href="#三、业务：" class="headerlink" title="三、业务："></a>三、业务：</h1><p>浏览器向Http服务器发送请求；<br>用户向网站发送请求；<br>举个栗子：张三用户发送请求：要求在服务端实现将张三账户3000元钱转给李四账户<br>业务处理方案:<br>1、判断”张三”是否是当前系统中用户<br>2、判断”李四”是否是当前系统中用户<br>3、读取”张三账户余额”，判断余额是否充足<br>4、读取”李四账户余额”，背账<br>5、更新”张三账户余额 - 3000”<br>6、更新”李四账户余额 + 3000”</p>
+<h1 id="四、业务特征："><a href="#四、业务特征：" class="headerlink" title="四、业务特征："></a>四、业务特征：</h1><p>1、真实业务场景中，一个业务往往包含多个分支任务。因此解决业务开发工作量往往比较巨大。<br>2、真实业务场景中，只有所有分支任务都能顺利成功解决，才可以认为当前业务处理成功。</p>
+<h1 id="五、解决业务开发困扰："><a href="#五、解决业务开发困扰：" class="headerlink" title="五、解决业务开发困扰："></a>五、解决业务开发困扰：</h1><p>1、一个业务可能在网站的多个地方重复出现，如果不做【封装】，增加开发难度，进行业务解决代码重复性开发。<br>2、【百人有百味】：不同程序员面对同一个业务时，给出解决方案往往有偏差，导致最终解决数据会有偏差。</p>
+<h1 id="六、MVC开发规则——互联网通信开发过程中必须出现角色有哪些"><a href="#六、MVC开发规则——互联网通信开发过程中必须出现角色有哪些" class="headerlink" title="六、MVC开发规则——互联网通信开发过程中必须出现角色有哪些"></a>六、MVC开发规则——互联网通信开发过程中必须出现角色有哪些</h1><p>一次互联网开发过程，必须出现角色有三个：</p>
+<table>
+<thead>
+<tr>
+<th align="center">目录</th>
+<th align="center">目录</th>
+<th align="center">目录</th>
+<th align="center">目录</th>
+<th align="center">目录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">C</td>
+<td align="center">controller</td>
+<td align="center">object</td>
+<td align="center">控制层对象</td>
+<td align="center">(Servlet   对象)</td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td align="center">model</td>
+<td align="center">object</td>
+<td align="center">业务模型对象</td>
+<td align="center">(Service   对象)</td>
+</tr>
+<tr>
+<td align="center">V</td>
+<td align="center">view</td>
+<td align="center">object</td>
+<td align="center">视图层对象</td>
+<td align="center">(jsp&#x2F;HttpServletResponse)</td>
+</tr>
+</tbody></table>
+<h1 id="七、MVC开发规则——互联网通信开发过程中必须出现角色担负职责"><a href="#七、MVC开发规则——互联网通信开发过程中必须出现角色担负职责" class="headerlink" title="七、MVC开发规则——互联网通信开发过程中必须出现角色担负职责"></a>七、MVC开发规则——互联网通信开发过程中必须出现角色担负职责</h1><h2 id="C-Servlet对象-："><a href="#C-Servlet对象-：" class="headerlink" title="C (Servlet对象)："></a>C (Servlet对象)：</h2><p>1）【可以】调用【请求对象】读取【请求包】参数信息<br>2）【必须】调用【Service对象】处理业务<br>3）【必须】调用【视图层对象】将结果写入到响应体</p>
+<h2 id="M-Service对象-："><a href="#M-Service对象-：" class="headerlink" title="M (Service对象)："></a>M (Service对象)：</h2><p>1）处理业务中所有分支任务<br>2）根据分支任务执行情况判断业务是否处理成功<br>3）必须通过return将处理结果返回给【控制层对象】</p>
+<h2 id="V-jsp-x2F-HttpServletResponse"><a href="#V-jsp-x2F-HttpServletResponse" class="headerlink" title="V (jsp&#x2F;HttpServletResponse)"></a>V (jsp&#x2F;HttpServletResponse)</h2><p>1）禁止参与业务处理<br>2）唯一任务将处理结果写入到响应体</p>
+<h1 id="八、互联网通信开发过程中必须出现角色的出场顺序"><a href="#八、互联网通信开发过程中必须出现角色的出场顺序" class="headerlink" title="八、互联网通信开发过程中必须出现角色的出场顺序"></a>八、互联网通信开发过程中必须出现角色的出场顺序</h1><p>请求调用顺序：浏览器发送请求—-&gt;Servlet—-&gt;Service—-&gt;DeptDao&#x2F;EmpDao                                                  </p>
+<p>响应顺序：EmpDao&#x2F;DeptDao分支任务结果—-&gt;Service—-&gt;Servlet—-&gt;View—-&gt;响应体—-&gt;tomcat—-&gt;浏览器</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/18/Ajax%E4%BB%8B%E7%BB%8D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Ajax介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/18/JavaScript%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript高级应用篇</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="MVC开发规则" data-title="MVC开发规则" data-url="http://example.com/2022/02/18/MVC%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/"  data-images="http://Jwruan8.github.io\img/weixin.jpg" data-content="MVC开发规则">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 John Doe
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

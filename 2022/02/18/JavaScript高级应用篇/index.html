@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript高级应用篇 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、 arguments：参数1、JavaScript中，每一函数都包含一个arguments属性；2、arguments属性是一个数组；3、在函数调用时，将实参输入到函数的arguments中，再由arguments将数据传递给形参4、arguments属性存在，可以将JavaScript中函数在调用时传递实参与形参进行格式，增加函数调用灵活性；5、arguments属性只能在函数体内使用，不能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript高级应用篇">
+<meta property="og:url" content="http://example.com/2022/02/18/JavaScript%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8%E7%AF%87/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、 arguments：参数1、JavaScript中，每一函数都包含一个arguments属性；2、arguments属性是一个数组；3、在函数调用时，将实参输入到函数的arguments中，再由arguments将数据传递给形参4、arguments属性存在，可以将JavaScript中函数在调用时传递实参与形参进行格式，增加函数调用灵活性；5、arguments属性只能在函数体内使用，不能">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-18T00:03:31.000Z">
+<meta property="article:modified_time" content="2022-02-18T00:05:51.735Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://Jwruan8.github.io\img/weixin.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+
+<script src="/js/Counter.js"></script>
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主    页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/EL/" style="font-size: 10px;">EL</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Servlet/" style="font-size: 15px;">Servlet</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://Jwruan8.github.io\img/weixin.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主    页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-JavaScript高级应用篇" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/02/18/JavaScript%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8%E7%AF%87/" class="article-date">
+  	<time datetime="2022-02-18T00:03:31.000Z" itemprop="datePublished">2022-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript高级应用篇
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2022/02/18/JavaScript%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8%E7%AF%87/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript高级应用篇">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、-arguments：参数"><a href="#一、-arguments：参数" class="headerlink" title="一、 arguments：参数"></a>一、 arguments：参数</h1><p>1、JavaScript中，每一函数都包含一个arguments属性；<br>2、arguments属性是一个数组；<br>3、在函数调用时，将实参输入到函数的arguments中，再由arguments将数据传递给形参<br>4、arguments属性存在，可以将JavaScript中函数在调用时传递实参与形参进行格式，增加函数调用灵活性；<br>5、arguments属性只能在函数体内使用，不能在函数体外使用；</p>
+<h1 id="二、function属性："><a href="#二、function属性：" class="headerlink" title="二、function属性："></a>二、function属性：</h1><p>1、介绍：<br>1）function是JavaScript中一种高级数据类型<br>2）一个function类型对象用于管理一个具体函数<br>3）Javascript中function类型相当于Java中Method类型<br>2、function类型对象声明方式：<br>1）标准声明方式<br>2）匿名声明方式<br>3、function类型对象声明方式—-标准声明方式<br>function函数对象名(参数1，参数2){<br>命令;<br>}<br>4、function类型对象声明方式—-匿名声明方式<br>var 函数对象名 &#x3D; function(参数1，参数2)(命令1，命令2.。。。)；<br>5、function类型对象的创建时机<br>浏览器在加载<script>时，共加载两次；<br>第一次加载，将<script>标签所有以标准形式声明函数对象进行创建<br>第二次加载，将<script>标签所有命令行按照自上而下顺序来执行</p>
+<h1 id="三、局部变量与全局变量"><a href="#三、局部变量与全局变量" class="headerlink" title="三、局部变量与全局变量"></a>三、局部变量与全局变量</h1><p>1、局部变量：<br>1）定义：在函数执行体内，通过var修饰符声明的变量<br>function fun1 () {<br>var name ="mike"； // 局部变量<br>}<br>2）特征：局部变量只能在当前函数执行体使用，不能在函数执行体外使用<br>2、全局变量：<br>定义：<br>1、全局变量可以在当前HTML文件中所有的函数中使用<br>2、全局变量被声明时，自动分配给window对象作为其属性<br>声明全局变量：<br>第一种方式：直接在script标签下，通过var声明的变量，就是全局变量；<br>第二种方式：在函数执行体内，没有通过var修饰符修饰的变量也是全局变量；</p>
+<h1 id="四、object类型对象特征"><a href="#四、object类型对象特征" class="headerlink" title="四、object类型对象特征:"></a>四、object类型对象特征:</h1><p>1、【定义】：在Javascript认为所有通过【构造函数】生成对象其数据类型都是object类型<br>2、【特征】：object类型对象在创建完毕后，可以根据实际情况，任意添加属性和方法，也可以移除属性和方法。<br>3、【属性维护】：<br>第一种维护方案：<br>添加属性：<br>object对象.新属性名 = 值；<br>添加函数：<br>object对象.新函数对象名 = function () { } ；<br>第二种维护方案<br>添加属性：<br>object对象["新属性名"] = 值；<br>添加函数：<br>object对象["新函数对象名"] = function；<br>移除对象属性和方法<br>del object.属性名<br>del object.函数名</p>
+<h1 id="五、自定义构造函数"><a href="#五、自定义构造函数" class="headerlink" title="五、自定义构造函数"></a>五、自定义构造函数</h1><p>1、【命令】：<br>function函数对象名(){<br>}<br>2、【调用】：<br>var object类型对象 = new函数对象名() ；<br>3、【普通函数与构造函数区分】：<br>1）函数没有调用之前，无法区分函数身份，只能根据函数调用形式区分<br>2）判断普通函数：<br>var num =函数对象名()；<br>3）判断构造函数：<br>var num = new的数对象名()；<br>4）返回值：<br>普通函数运行后需要通过将执行结果返回，构造函数运行后，直接返回一个object类型的对象，此时函数return相当于无效！</p>
+<h1 id="六、JavaScript中this指向："><a href="#六、JavaScript中this指向：" class="headerlink" title="六、JavaScript中this指向："></a>六、JavaScript中this指向：</h1><p>1、JavaScrit中this指向与Java中this指向完全一致的。<br>1）在构造函数，this指向当前构造函数生成object类型对象<br>2）在普通函数，this指向调用当前函数的实例对象</p>
+<h1 id="七、JSON："><a href="#七、JSON：" class="headerlink" title="七、JSON："></a>七、JSON：</h1><p>1、前提：JavaScript中得到object类型对象方式<br>方式1：由构造函数生成的对象都是object类型对象<br>方式2：由JSON数据描述格式生成对象都是object类型对象<br>2、JSON数据描述格式：<br>JavaScript中获得object类型对象简化版；<br>3、标准命令格式：<br>var obj={ "属性名1":值，"属性名2":值}；<br>开发人员习惯于将由JSON生成object类型对象称为【JSON对象】；</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/18/MVC%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          MVC开发规则
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/18/JavaScript%E5%9F%BA%E7%A1%80%E5%BA%94%E7%94%A8%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript基础应用篇</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="JavaScript高级应用篇" data-title="JavaScript高级应用篇" data-url="http://example.com/2022/02/18/JavaScript%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8%E7%AF%87/"  data-images="http://Jwruan8.github.io\img/weixin.jpg" data-content="JavaScript高级应用篇">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 John Doe
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
