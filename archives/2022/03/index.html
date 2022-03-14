@@ -3,23 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JSP文件运行原理 | Hexo</title>
+  <title>Archives: 2022/3 | Hexo</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Http服务器调用JSP文件步骤:【2019年北京地区常考面试题】1、Htt如服务器将JSP文件内容【编辑】为一个servlet接口实现类(.java)2、Http服务器将servlet接口实现类【编译】为class文件(.class)3、Http服务器负责创建这个class的实例对象，这个实例对象就是servlet实例对象4、Http服务器通过servlet实例对象调用_jspService方法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JSP文件运行原理">
-<meta property="og:url" content="http://example.com/2022/02/18/JSP%E6%96%87%E4%BB%B6%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/archives/2022/03/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Http服务器调用JSP文件步骤:【2019年北京地区常考面试题】1、Htt如服务器将JSP文件内容【编辑】为一个servlet接口实现类(.java)2、Http服务器将servlet接口实现类【编译】为class文件(.class)3、Http服务器负责创建这个class的实例对象，这个实例对象就是servlet实例对象4、Http服务器通过servlet实例对象调用_jspService方法">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-17T23:34:09.000Z">
-<meta property="article:modified_time" content="2022-02-18T00:58:52.884Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="JSP">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -178,105 +173,67 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-JSP文件运行原理" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2022/02/18/JSP%E6%96%87%E4%BB%B6%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/" class="article-date">
-  	<time datetime="2022-02-17T23:34:09.000Z" itemprop="datePublished">2022-02-18</time>
-</a>
-    </div>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      JSP文件运行原理
       
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/03/15/001-break%E3%80%81return%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2022-03-14T16:26:48.000Z" itemprop="datePublished">Mar 15</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/03/15/001-break%E3%80%81return%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB/">
+        001-break、return和continue的区别
+        
+      </a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-left">
+          
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/" rel="tag">JSP</a></li></ul>
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
 	</div>
 
-        
-
-        
           
+
+          
+            
 <div class="counter-tag counter">
-    <span id="/2022/02/18/JSP%E6%96%87%E4%BB%B6%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="JSP文件运行原理">
+    <span id="/2022/03/15/001-break%E3%80%81return%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="001-break、return和continue的区别">
          &nbsp;
         view
     </span>
 </div>
 
-        
+          
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Http服务器调用JSP文件步骤-【2019年北京地区常考面试题】"><a href="#Http服务器调用JSP文件步骤-【2019年北京地区常考面试题】" class="headerlink" title="Http服务器调用JSP文件步骤:【2019年北京地区常考面试题】"></a>Http服务器调用JSP文件步骤:【2019年北京地区常考面试题】</h1><p>1、Htt如服务器将JSP文件内容【编辑】为一个servlet接口实现类(.java)<br>2、Http服务器将servlet接口实现类【编译】为class文件(.class)<br>3、Http服务器负责创建这个class的实例对象，这个实例对象就是servlet实例对象<br>4、Http服务器通过servlet实例对象调用_jspService方法，将jsp文件内容写入到响应体</p>
-<h1 id="Http服务器【编辑】与【编译】JSP文件位置"><a href="#Http服务器【编辑】与【编译】JSP文件位置" class="headerlink" title="Http服务器【编辑】与【编译】JSP文件位置:"></a>Http服务器【编辑】与【编译】JSP文件位置:</h1><p>标准答案：我在【work】下看到这个证据；<br>C: Users[登录windows系统用户角色名1.Intelli3Tdea2018.3\system\tomcat[网站工作空间]；<br>work\catalina\localhost\myWeb\org\apache\jsp；<br>这个路径中含有编译时的java和class文件；</p>
-
-      
-    </div>
-    
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/02/18/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          EL表达式
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/02/17/Servlet%E8%A7%84%E8%8C%832/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Servlet规范2</div>
-      <strong class="article-nav-caption">&gt;</strong>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<div class="ds-share share" data-thread-key="JSP文件运行原理" data-title="JSP文件运行原理" data-url="http://example.com/2022/02/18/JSP%E6%96%87%E4%BB%B6%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/"  data-images="http://Jwruan8.github.io\img/weixin.jpg" data-content="JSP文件运行原理">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
- 
-
-
-
-
+    
 
 </div>
       <footer id="footer">
@@ -304,8 +261,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
